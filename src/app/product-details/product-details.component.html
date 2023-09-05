@@ -1,0 +1,26 @@
+<div class="card mb-3" style="max-width: 540px">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img [src]="selected_product.images[0]" class="img-fluid rounded-start" alt="Product Image" />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{selected_product.title}}</h5>
+          <p class="card-text">
+            {{selected_product.description}}
+          </p>
+          <p class="card-text">
+            category: {{selected_product.category}}
+          </p>
+          <p class="card-text">
+            {{selected_product.brand}}
+          </p>
+          <p class="card-text">
+            rating: {{selected_product.rating}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

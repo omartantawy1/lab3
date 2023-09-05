@@ -1,0 +1,20 @@
+<div class="card h-100">
+    <img [src]="product.images[0]" class="card-img-top" [alt]="product.title" />
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}} </h5>
+      <p class="card-text">
+    {{product.description}}
+      </p>
+      <p class="card-text">{{ product.price | currency:'EGP':'EGP' }}</p>
+      <p class="card-text">{{ product.createdAt | date:'MMMM yyyy' }}</p>
+      <div class="row text-center d-flex justify-content-around"><button class="btn btn-primary col-4" (click)="redirectToDetails(product.id.toString())">Details</button>
+      <button class="btn btn-primary col-4 " >Add to Cart</button>
+    </div>
+    </div>
+    <div class="card-footer">
+      <p class="card-text" [ngClass]="{'text-danger': product.stock === 0, 'text-success': product.stock > 0}">
+        {{ product.stock | stockStatus }}
+      </p>
+    </div>
+  </div>
+  
