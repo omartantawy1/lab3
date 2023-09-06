@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  user = {
+    email: '',
+    password: ''
+  };
+
+  onSubmit() {
+    console.log('user:', this.user);
+  }
 }

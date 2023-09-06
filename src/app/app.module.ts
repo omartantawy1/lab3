@@ -11,7 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
 import { StockStatusPipe } from './stock-status.pipe';
-
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,8 +27,11 @@ import { StockStatusPipe } from './stock-status.pipe';
     StockStatusPipe
   ],
   imports: [
+    FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

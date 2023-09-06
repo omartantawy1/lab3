@@ -5,13 +5,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class StockStatusPipe implements PipeTransform {
   
-  transform(stock: number): string {
+  transform(stock: number) {
     if (stock === 0) {
       return 'Out of Stock';
-    } else if (stock > 0) {
-      return 'In Stock';
     } else {
-      return 'Invalid Stock';
+      return 'In Stock';
     }
   }
 }
