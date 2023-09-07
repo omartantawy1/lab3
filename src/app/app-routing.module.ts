@@ -14,7 +14,7 @@ const routes: Routes = [
     component: ProductsListComponent
   },
   {
-    path: 'game-details/:id',
+    path: 'product-details/:id',
     component: ProductDetailsComponent
   },
   

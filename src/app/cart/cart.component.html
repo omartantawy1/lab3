@@ -1,1 +1,36 @@
-<p>cart works!</p>
+<div *ngIf="cartItems.length > 0; else emptyCart">
+    <h2>Cart Items:</h2>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let item of cartItems">
+        <div class="card">
+          <img [src]="item.product.images[0]" class="card-img-top" alt="{{ item.product.title }}" />
+          <div class="card-body">
+            <h5 class="card-title">{{ item.product.title }}</h5>
+            <p class="card-text">Category: {{ item.product.category }}</p>
+            <p class="card-text">Description: {{ item.product.description }}</p>
+            <p class="card-text">Price: {{ item.product.price | currency:'EGP' :  'symbol' }}</p>
+            <div class="quantity-controls">
+              <button class="btn btn-primary" (click)="decrementQuantity(item)">-</button>
+              <input type="number" [(ngModel)]="item.quantity" min="1" step="1" />
+              <button class="btn btn-primary" (click)="incrementQuantity(item)">+</button>
+            </div>
+            <p class="card-text">Total: {{ item.quantity * item.product.price | currency:'EGP':'symbol' }}</p>
+            <button class="btn btn-danger" (click)="removeFromCart(item.product)">Remove from Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="total">
+      <p>Total: {{ calculateTotal() | currency:'EGP':'symbol' }}</p>
+    </div>
+  </div>
+  
+  <ng-template #emptyCart>
+    <p>Your cart is empty.</p>
+  </ng-template>
+  
+  
+  
+  
+  
+  

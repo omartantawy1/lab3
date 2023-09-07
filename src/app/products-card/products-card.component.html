@@ -8,7 +8,7 @@
       <p class="card-text">{{ product.price | currency:'EGP':'EGP' }}</p>
       <p class="card-text">{{ product.createdAt | date:'MMMM yyyy' }}</p>
       <div class="row text-center d-flex justify-content-around"><button class="btn btn-primary col-4" (click)="redirectToDetails(product.id.toString())">Details</button>
-      <button class="btn btn-primary col-4 " >Add to Cart</button>
+        <button class="btn btn-primary col-4" (click)="addToCart(product)">Add to Cart</button>
     </div>
     </div>
     <div class="card-footer">
